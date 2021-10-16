@@ -1,22 +1,7 @@
 import json
 import sys
 
-try:
-    # Try to get Python 3 versions
-    from urllib.parse import (
-        parse_qsl,
-        urlencode,
-        quote_plus,
-        parse_qs,
-        quote,
-        unquote,
-        urlparse,
-        urlunparse,
-        urljoin,
-    )
-except ImportError:
-    # Fall back on future.backports to ensure we get unicode compatible PY3 versions in PY2
-    from future.backports.urllib.parse import (
+from urllib.parse import (
         parse_qsl,
         urlencode,
         quote_plus,

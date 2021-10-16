@@ -4,15 +4,8 @@ import xbmc
 import xbmcaddon
 
 properties = [
-    "context.seren.quickResume",
-    "context.seren.shuffle",
-    "context.seren.playFromRandomPoint",
     "context.seren.rescrape",
     "context.seren.sourceSelect",
-    "context.seren.findSimilar",
-    "context.seren.browseShow",
-    "context.seren.browseSeason",
-    "context.seren.traktManager",
 ]
 
 
@@ -42,7 +35,7 @@ class PropertiesUpdater(xbmc.Monitor):
             )
 
 
-xbmc.log("context.seren service: starting", xbmc.LOGINFO)
+xbmc.log("context.hs service: starting", xbmc.LOGINFO)
 
 try:
     # start monitoring settings changes events
@@ -51,8 +44,8 @@ try:
     # wait until abort is requested
     properties_monitor.waitForAbort()
 except Exception as e:
-    xbmc.log("context.seren service: error - {}".format(e), xbmc.LOGERROR)
+    xbmc.log("context.hs service: error - {}".format(e), xbmc.LOGERROR)
 finally:
     del properties_monitor
 
-xbmc.log("context.seren service: stopped", xbmc.LOGINFO)
+xbmc.log("context.hs service: stopped", xbmc.LOGINFO)

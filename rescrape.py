@@ -13,11 +13,11 @@ from tools import (
 if __name__ == "__main__":
     path = get_current_list_item_path()
     path = action_replace(path, {"smartPlay": "getSources"})
-    path = update_query_params(path, {"seren_reload": "true"})
+    path = update_query_params(path, {"hs_reload": "true"})
 
     action_args = get_current_list_item_action_args()
     xbmc.log(
-        "context.seren: Rescrape Item ({})".format(action_args.get("trakt_id")),
+        "context.hs: Source Select ({})".format(action_args['info']['title']),
         xbmc.LOGDEBUG,
     )
     xbmc.executebuiltin("PlayMedia({})".format(path))
